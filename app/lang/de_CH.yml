@@ -1,0 +1,300 @@
+de_CH:
+  DNADesign\Elemental\Models\ElementContent:
+    BlockType: Text
+  App\Elements\ElementContentSection:
+    BlockType: Accordion
+  App\Elements\ElementCounter:
+    BlockType: Counter
+  App\Elements\ElementFeedTeaser:
+    BlockType: 'Teaser (feed)'
+    COUNTMAX: 'Anzahl Teasers (default 3)'
+    FEEDTEASERPARENTS: 'Eltern/Holders verlinkter Seiten'
+    FIRSTLINKACTION: 'Text link parent (first)'
+    HowText: 'Es werden Unterseiten (Kinder) der gewählten Seiten (Eltern/Holders) z.B. News mit den gewählten Kategorien angeteasert. Bild & Text kann auf jeweiligen Seiten im Tab "Feeds & Share" gewählt werden.'
+    HowTitle: 'Was wird angezeigt?'
+    SHOWASSLIDER: 'Als Slider anzeigen'
+  App\Elements\ElementGallery:
+    ALIGNMENT: 'Ausrichtung (flex)'
+    BlockType: Gallery
+    FOLDER: Ordner
+    SITEMAPIMAGEEXPOSE: 'Bilder in sitemap.xml zeigen'
+    GalleryImagesDescription: 'Breite getrimmt auf 1224px'
+    OneOrTheOther: 'Bilder per Ordner (alle enthaltenen) oder einzeln wählen & sortieren'
+  App\Elements\ElementHero:
+    BlockType: Hero
+    SITEMAPIMAGEEXPOSE: 'Bilder in sitemap.xml zeigen'
+    DONOTCROP: 'Höhe nicht begrenzen'
+    DoNotCropDescription: 'Keine maximale Höhe für breite viewports → "small" & "medium"'
+    HEROSIZE: 'Grösse/Höhe Header'
+    HeroSizeDescription: '{aspectRatios} - "fullscreen" erfordert "full width"'
+  App\Elements\ElementLogo:
+    BlockType: 'Logos (Partner)'
+  App\Elements\ElementMaps:
+    BlockType: Map
+    PLURALNAME: Maps
+    PLURALS:
+      one: 'A Map'
+      other: '{count} Maps'
+    SINGULARNAME: Map
+    ZoomDescription: 'Zoomstufe passt sich an, um alle Marker zu zeigen. Hier kann ein Minimalwert konfiguriert werden.'
+    HTMLFieldDescription: 'Wenn Inhalt vorhanden, wird dieser auf dem Desktop neben der "Karte" angezeigt'
+  App\Elements\ElementDownloads:
+    Documents: 'Dokumente'
+    OneOrTheOther: 'Wählen Sie Dateien nach Ordner (alle enthalten) oder einzeln aus'
+    FOLDER: 'Ordner'
+    BlockType: 'Downloads'
+  App\Elements\ElementPDFDocument:
+    AddDocument: 'Dokument hinzufügen...'
+    SHOWASSLIDER: 'Als Slider anzeigen'
+  App\Elements\ElementPerso:
+    BlockType: Team
+    PLURALNAME: Personal
+    PLURALS:
+      one: 'A Personal'
+      other: '{count} Personal'
+    SINGULARNAME: Personal
+    PERSOS: 'Mitarbeiter'
+    CanDeleteExplanation: 'Nur Abteilungen ohne Personen können gelöscht werden!'
+    GROUPBYDEPARTMENT: 'Nach Abteilung gruppieren'
+    GroupByDepartmentDescription: 'Wenn angehakt, wird die Sortierung in der Abteilung angepasst'
+  App\Elements\ElementPersoCFA:
+    BlockType: 'Contact (CFA)'
+    COUNTMAX: 'Anzahl Teasers (default 3)'
+    PERSOS: 'Mitarbeiter'
+    PLURALNAME: Contacts
+    PLURALS:
+      one: 'A Contact'
+      other: '{count} Contacts'
+    SINGULARNAME: Contact
+  App\Elements\ElementTeaser:
+    BlockType: Teaser
+    SHOWASSLIDER: 'Als Slider anzeigen'
+  App\Elements\ElementTextImage:
+    BlockType: 'Text Bild'
+    ELEMENTLAYOUT: 'Anordnung links...'
+    HTML: Text
+    IMAGE: Bild
+    ImageDescription: 'min. 1400x1800px'
+  App\Extensions\UrlifyExtension:
+    DefaultTitle: 'Neuer Eintrag'
+    METADESCRIPTION: 'Meta Description'
+    METATITLE: 'Meta Title'
+    MetadataToggle: Metadata
+    NoParentElement: 'Ein Element zum anzeigen fehlt derzeit! Fügen Sie ein {Element} in den Seitenbaum ein und weisen Sie hier eine URL zu.'
+    TITLE: Title
+  App\Models\ContentPart:
+    PLURALNAME: 'Content Parts'
+    PLURALS:
+      one: 'A Content Part'
+      other: '{count} Content Parts'
+    SINGULARNAME: 'Content Part'
+    TITLE: Titel
+    TitleRequired: 'Titel ist erforderlich!'
+    FAQTITLE: 'Titel/Frage'
+    FAQTitleDescription: 'Übersteuert "Titel" für FAQ Schema'
+    DEFAULTOPEN: 'Beim Laden öffnen'
+    IsUsedOnComment: 'ContentPart wird in folgenden Elementen verwendet'
+  App\Models\CountItem:
+    PLURALNAME: 'Count Items'
+    PLURALS:
+      one: 'A Count Item'
+      other: '{count} Count Items'
+    SINGULARNAME: 'Count Item'
+    TEXT: Text
+    TITLE: Titel
+    VALUE: Wert
+  App\Models\Department:
+    PLURALNAME: Abteilungen
+    PLURALS:
+      one: 'Eine Abteilung'
+      other: '{count} Abteilungen'
+    SINGULARNAME: Abteilung
+    TITLE: Titel
+  App\Models\ElementPage:
+    DESCRIPTION: 'Erlaubt modulare Inhaltskomposition mit Elementen'
+    HeroNeeded: 'Wenn kein "Hero" als oberstes Element vorhanden ist, werden <a href="/admin/settings/">default Header Slides</a> verwendet.'
+    PLURALNAME: 'Element Pages'
+    PLURALS:
+      one: 'An Element Page'
+      other: '{count} Element Pages'
+    SINGULARNAME: 'Element Page'
+    PREVENTHERO: 'Default Hero nicht anzeigen'
+  App\Models\Location:
+    TITLE: Titel
+    ADDRESS: Adresse
+    ADDRESSREGION: 'Kanton / Bundesland'
+    EMAIL: E-Mail
+    GEOPOINT: Koordinaten
+    SINGULARNAME: Standort
+    PLURALNAME: Standorte
+    PLURALS:
+      one: 'Standort'
+      other: '{count} Standorte'
+    POSTALCODE: PLZ
+    POSTOFFICEBOXNUMBER: 'Postfach'
+    TELEPHONE: Telefon
+    TOWN: Ort
+    COUNTRY: Land
+    OPENINGHOURS: Öffnungszeiten
+    DescriptionGeoPointField: 'Koordinaten aus ElementMap verknüpfen'
+    Duplicate: '{FieldName} muss einzigartig sein!'
+  App\Models\Vacation:
+    TITLE: Titel
+    STARTDATE: Startdatum
+    ENDDATE: Enddatum
+    LOCATIONS: Standorte
+    SINGULARNAME: Ferien
+    PLURALNAME: Ferien
+    DATEVALIDATION: 'Enddatum muss nach oder am selben Tag wie das Startdatum liegen.'
+    LOCATIONVALIDATION: 'Es muss mindestens ein Standort ausgewählt werden.'
+  App\Models\Logo:
+    TITLE: 'Titel'
+    LOGOIMAGE: 'Logo Datei'
+    LogoImageDescription: 'min. 120px hoch'
+    PLURALNAME: Logos
+    PLURALS:
+      one: 'A Logo'
+      other: '{count} Logos'
+    SINGULARNAME: Logo
+  App\Models\MetaOverviewPage:
+    PLURALNAME: 'Meta Overview Pages'
+    PLURALS:
+      one: 'A Meta Overview Page'
+      other: '{count} Meta Overview Pages'
+    SINGULARNAME: 'Meta Overview Page'
+    NoMetaDescription: 'Keine Meta-Description verfügbar!'
+  App\Models\Perso:
+    EMAIL: E-Mail
+    FIRSTNAME: 'Vorname'
+    LASTNAME: 'Nachname'
+    MOTIVATION: Text
+    PLURALNAME: Persos
+    PLURALS:
+      one: 'A Perso'
+      other: '{count} Persos'
+    PortraitDescription: 'min. 576x766px'
+    SINGULARNAME: Perso
+    TELEPHONE: 'Telefon'
+    TelephoneDescription: '+41 43 000 00 00'
+    CLOSE: 'Details ausblenden'
+    IsUsedOnComment: '"{name}" wird in folgenden Elementen verwendet'
+  App\Models\Point:
+    PLURALNAME: Points
+    PLURALS:
+      one: 'A Point'
+      other: '{count} Points'
+    POINTURL: 'Link auf Marker'
+    SINGULARNAME: Point
+    TITLE: Titel
+    PointURLDESCRIPTION: 'Link zum Business-Eintrag von Google-Map'
+  App\Models\Slide:
+    PLURALNAME: Slides
+    PLURALS:
+      one: 'A Slide'
+      other: '{count} Slides'
+    SINGULARNAME: Slide
+    SlideImageDescription: '{aspectRatio} - Fokuspunkt verwenden!'
+    TEXT: 'Claim auf Bild'
+    TEXTALIGNMENT: 'Anordnung Text'
+    TITLE: Titel
+    TitleRequired: 'Titel ist erforderlich!'
+    IsUsedOnComment: 'Slide wird in folgenden Elementen verwendet'
+  App\Models\SocialLink:
+    PLURALNAME: Social-Links
+    PLURALS:
+      one: 'A Social-Link'
+      other: '{count} Social-Links'
+    SINGULARNAME: Social-Link
+    TITLE: Titel
+    ICONNAME: 'Icon Name'
+    IconNameDescription: 'Icon Name von <a href="{link}" target="_blank">{link}</a>!'
+    SAMEAS: '"sameAs" in schema verwenden'
+    TitleRequired: 'Titel ist erforderlich!'
+  App\Models\Teaser:
+    ImageDescription: 'min. 600x600px'
+    MORE: 'Mehr&nbsp;erfahren'
+    PLURALNAME: Teasers
+    PLURALS:
+      one: 'A Teaser'
+      other: '{count} Teasers'
+    SINGULARNAME: Teaser
+    IsUsedOnComment: 'Teaser wird in folgenden Elementen verwendet'
+    LAYOUT: 'Anordnung Text'
+  DNADesign\Elemental\Models\BaseElement:
+    AVAILABLEGLOBALLY: 'klonen mit virtuellem Element ermöglichen'
+    AnchorLinkDescription: 'kein gültiger Anker'
+    BACKGROUNDCOLOR: 'Element Hintergrundfarbe'
+    ISFULLWIDTH: 'in voller Breite zeigen'
+    SPACINGBOTTOM: 'Spacing bottom'
+    SPACINGTOP: 'Spacing top'
+    SpacingDescription: 'Anzahl Zeilen Lauftext (1 - 6)'
+    TITLELEVEL: 'H1, H2, H3'
+    WIDTHREDUCED: 'Breite reduziert'
+  \Page:
+    MENU: Menu
+    OGDescriptionCustomDescription: 'Defaultwert ist Meta-Description oder Summary bei einem Blog-Post'
+    MetaTitleRightTitle: 'Wird als Titel im Browser und für Suchmaschinen Resultate verwendet. Wichtig für SEO!'
+    MetaDescriptionRightTitle: 'Wird in Suchmaschinen-Ergebnissen verwendet, wenn Länge passt und Relevanz gegeben ist; beeinflusst die SEO-Position kaum. Ansprechende Meta-Descripton (besonders die ersten ~55 Zeichen -> Sitelinks) beeinflussen die Klickrate jedoch stark.'
+    NavAriaLabel: 'Hauptnavigation'
+  SilverStripe\CMS\Model\RedirectorPage:
+    NewWindowLabel: 'URL in einem neuen Fenster öffnen'
+  SilverStripe\Blog\Model\Blog:
+    Allcategories: Alle
+    MORE: Weiterlesen
+    NoPosts: 'Kein Artikel'
+  SilverStripe\Blog\Model\BlogPost:
+    PublishDateDescription: 'geplante Veröffentlichung'
+  SilverStripe\CMS\Controllers\CMSMain:
+    SaveFirst: 'Bitte Element erst speichern, danach können Sub-Elemente erfasst werden.'
+  SilverStripe\SiteConfig\SiteConfig:
+    SITENAMEDEFAULT: 'Name Webseite'
+    TABMAIN: Main
+    SITETAGLINE: 'Claim / Beschreibung'
+    SortImpact: '"Location" an 1. Stelle wird im Footer angezeigt.'
+    DEFAULTHEADERSLIDES: 'Default Header Slides'
+    DEFAULTHEADERSLIDESDESCRIPTION: 'Wird auf Pages ohne Hero angezeigt'
+    DEFAULTHEROSIZE: 'Grösse default Hero'
+    FOUNDINGDATE: 'Gründungsdatum'
+    LEGALNAME: 'Offizieller Name (rechtlich)'
+    METADESCRIPTION: 'Meta Description'
+    MetaDescriptionDescription: 'Defaultwert, falls auf Seitenebene keine Beschreibung erfasst ist.'
+    SERVICENAVIGATIONITEMS: 'Service Navigation'
+    ServiceNavigationItemsDescription: 'Links über der Hauptnavigation im Header'
+    TERMSNAVIGATIONITEMS: 'Terms'
+    TermsNavigationItemsDescription: 'Footer (AGB, Datenschutz, Impressum etc.)'
+    TITLE: 'Title / Name'
+    VacationsHolidays: 'Ferien & Feiertage'
+  JonoM\ShareCare\ShareCare:
+    TabName: 'Feed & Share'
+  JonoM\ShareCare\ShareCareFields:
+    CMSMessage: 'Die Vorschau wird automatisch aus dem Inhalt generiert. Die generierten Werte können hier manuell überschrieben werden.<br><strong>Generell sollte nur etwas erfasst werden, wenn der Inhalt vom Defaultwerte (kursiv) abweicht. Als Bild wird per default das 1. Bild der xml-sitemap resp. ein Icon als "Fallback" verwendet. Die "Share Beschreibung" basiert auf der Metadescription, resp. im Falle eines BlogPosts auf der Zusammenfassung und verwendet als "Fallback" die globale MetaDescription von "Einstellungen/SiteConfig".</strong>'
+  DNADesign\Elemental\Forms\TextCheckboxGroupField:
+    TitleLabel: Titel
+  SilverStripe\Forms\GridField\GridField:
+    PlaceHolderWithLabels: 'Tippe "%" um alle Datensätze anzuzeigen.'
+  App\Models\Marke:
+    LogoDescription: 'freigestellt PNG<br />min. 130px breit'
+  # userform duplicate de_DE.yml
+  SilverStripe\UserForms\Model\EditableFormField:
+    EXTRACLASS_MULTIPLE: 'Mehrere CSS Klassen mit Leerzeichen trennen - half-width - quarter-width-checkbox - auto-width'
+    FIELDISREQUIRED: '{name} muss ausgefüllt werden'
+  SilverStripe\UserForms\Model\UserDefinedForm:
+    ONCOMPLETEMESSAGE: 'Danke wir haben Ihre Nachricht erhalten.'
+    SUBMITBUTTON: Senden
+    CONFIGURATION: Konfiguration
+    RECIPIENTS: Empfänger
+    SUBMISSIONS: Nachrichten
+  Kraftausdruck\KlaroCookie:
+    ConsentNoticeTitle: 'Datenschutz & Cookies'
+    Decline: 'Nur Notwendige'
+  UndefinedOffset\NoCaptcha\Forms\NocaptchaField:
+    ReCaptchaTermsTextStart: 'Diese Website ist durch reCAPTCHA geschützt und es gelten die'
+    ReCaptchaTermsTextEnd: 'von Google.'
+    ReCaptchaPrivacyPolicy: 'Datenschutzerklärung'
+    ReCaptchaTermsOfService: 'Nutzungsbedingungen'
+  App\Models\EditableFormField\EditableCheckboxTerms:
+    DefaultDescription: 'Ich akzeptiere &lt;a rel=&quot;noopener noreferrer&quot; href=&quot;[sitetree_link,id={id}]&quot; target=&quot;_blank&quot;&gt;AGBs und Datenschutzbestimmungen.<br/><strong>{id}</strong> ist die PageID welche Klaro linkt.'
+    DefaultTitle: 'Ich akzeptiere <a rel="noopener noreferrer" href="[sitetree_link,id={id}]" target="_blank">AGBs und Datenschutzbestimmungen</a>.'
+  App\Model\ShortCodeSnippet:
+    Duplicate: 'Titel darf nur einmal verwendet werden.'
+    ShortCodeDescription: 'Shortcodes können auch Variablen wie "{$Text}" aus Parametern verwenden [Snippet title="Titel" Text="Text"]'

@@ -1,0 +1,80 @@
+---
+Name: dev-errors
+Only:
+  environment: dev
+---
+SilverStripe\Core\Injector\Injector:
+  Psr\Log\LoggerInterface.errorhandler:
+    calls:
+      pushMyDisplayErrorHandler: [ pushHandler, [ '%$DisplayErrorHandler' ]]
+      pushFileLogHandler: [ pushHandler, [ '%$LogFileHandler' ]]
+
+  DisplayErrorHandler:
+    class: SilverStripe\Logging\HTTPOutputHandler
+    constructor:
+      - 'notice'
+    properties:
+      Formatter: '%$SilverStripe\Logging\DetailedErrorFormatter'
+      CLIFormatter: '%$SilverStripe\Logging\DetailedErrorFormatter'
+
+  LogFileHandler:
+    class: Monolog\Handler\StreamHandler
+    constructor:
+      - '`SS_ERROR_LOG`'
+      - 'notice'
+---
+Name: live-errors
+Except:
+  environment: dev
+---
+SilverStripe\Core\Injector\Injector:
+  # Default logger implementation for general purpose use
+  Psr\Log\LoggerInterface:
+    calls:
+      pushFileLogHandler: [ pushHandler, [ '%$LogFileHandler' ]]
+
+  # Core error handler for system use
+  Psr\Log\LoggerInterface.errorhandler:
+    calls:
+      pushWebProcessor: [ pushProcessor, [ '%$WebProcessor' ]]
+      pushFileLogHandler: [ pushHandler, [ '%$LogFileHandler' ]]
+      pushMailHandler: [ pushHandler, [ '%$MailHandler' ]]
+
+  # Configure WebProcessor to include User-Agent, since it's not included by default
+  WebProcessor:
+    class: Monolog\Processor\WebProcessor
+    constructor:
+      0: null
+      1:
+        - 'url'
+        - 'ip'
+        - 'http_method'
+        - 'server'
+        - 'referrer'
+        - 'user_agent'
+
+  # Custom handler to log to a file
+  LogFileHandler:
+    class: Monolog\Handler\StreamHandler
+    constructor:
+      - '`SS_ERROR_LOG`'
+      - 'notice'
+
+  MailHandler:
+    class: Monolog\Handler\NativeMailerHandler
+    constructor:
+      - '`SS_ERROR_EMAIL`'
+      - '%message%'
+      - '`SS_ADMIN_EMAIL`'
+      - 'error'
+    properties:
+      ContentType: text/html
+      # Formatter: '%$SilverStripe\Logging\DetailedErrorFormatter'
+      Formatter: '%$Monolog\Formatter\HtmlFormatter'
+
+  # Configuration for the "friendly" error formatter
+  SilverStripe\Logging\DebugViewFriendlyErrorFormatter:
+    class: SilverStripe\Logging\DebugViewFriendlyErrorFormatter
+    properties:
+      Title: "There has been an error"
+      Body: "The website server has not been able to respond to your request"

@@ -1,0 +1,129 @@
+---
+Name: app
+After:
+  - 'blogconfig'
+---
+SilverStripe\Assets\InterventionBackend:
+  flush_enabled: false
+
+SilverStripe\Assets\File:
+  allowed_extensions:
+    svg: true # cos of perso QR-URL to vCard
+    webp: true
+    bmp: false
+    vcf: true
+    ics: true
+    avif: true
+
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: app
+
+SilverStripe\View\SSViewer:
+  # global_key: '$CurrentReadingMode, $Locale'
+  rewrite_hash_links: false
+
+SilverStripe\Assets\Upload:
+  overwriteWarning: true
+  replaceFile: true
+
+SilverStripe\View\Requirements:
+  write_js_to_body: true
+  force_js_to_bottom: true
+
+SilverStripe\ORM\FieldType\DBText:
+  summary_sentence_separators:
+    - '.'
+    - '?'
+    - '!'
+    - ':'
+
+SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
+  editor_css:
+    - 'themes/default/dist/css/editor.css'
+
+SilverStripe\Forms\HTMLEditor\HTMLEditorField:
+  default_classes:
+    stacked: stacked
+
+Page:
+  childrenexcluded:
+    default:
+      - SilverStripe\Blog\Model\BlogPost
+
+SilverStripe\Blog\Model\BlogCategory:
+  allow_urlsegment_multibyte: true
+
+SilverStripe\Blog\Model\BlogPost:
+  show_in_sitetree: false
+  default_sort: 'Sort ASC, PublishDate DESC'
+  allowed_elements:
+    - DNADesign\Elemental\Models\ElementContent
+    - DNADesign\ElementalUserForms\Model\ElementForm
+    - DNADesign\ElementalVirtual\Model\ElementVirtual
+
+App\Models\ElementPage:
+  icon: 'themes/default/dist/images/svg/icon-elements.svg'
+  extensions:
+    - DNADesign\Elemental\Extensions\ElementalPageExtension
+  allowed_elements:
+    - DNADesign\Elemental\Models\ElementContent
+    - DNADesign\ElementalUserForms\Model\ElementForm
+    - DNADesign\ElementalVirtual\Model\ElementVirtual
+
+DNADesign\Elemental\Models\BaseElement:
+  inline_editable: false
+  require_sudo_mode: false
+
+DNADesign\ElementalUserForms\Model\ElementForm:
+  block_default_userforms_css: true
+  block_default_userforms_js: true
+  disable_multi_step_forms: true
+
+SilverStripe\UserForms\Control\UserDefinedFormController:
+  maximum_email_attachment_size: 8M
+
+SilverStripe\i18n\i18n:
+  default_locale: de_CH
+  date_format: 'dd.MM.yyyy'
+  time_format: 'HH:mm'
+  missing_default_warning: false
+
+SilverStripe\CMS\Model\SiteTree:
+  create_default_pages: false
+  default_classname: App\Models\ElementPage
+  hide_pagetypes:
+    - Page
+    - SilverStripe\CMS\Model\VirtualPage
+    - SilverStripe\UserForms\Model\UserDefinedForm
+    # - SilverStripe\Blog\Model\Blog
+    # - SilverStripe\Blog\Model\BlogPost
+
+SilverStripe\Assets\Upload_Validator:
+  default_max_file_size:
+    '[image]': '5m'
+
+SilverStripe\Core\Injector\Injector:
+  Intervention\Image\ImageManager:
+    constructor:
+      - driver: imagick
+  SilverStripe\Assets\Image_Backend:
+    properties:
+      Quality: 84
+  Psr\SimpleCache\CacheInterface.cacheblock:
+    constructor:
+      namespace: 'cacheblock'
+      defaultLifetime: 0 # zero is infinit
+
+---
+Except:
+  environment: 'live'
+---
+SilverStripe\View\SSViewer:
+  source_file_comments: false
+
+---
+Only:
+  environment: 'live'
+---
+SilverStripe\Dev\DevelopmentAdmin:
+  deny_non_cli: true

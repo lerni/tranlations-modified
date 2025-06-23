@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "adrian.silverstripe",
+    "berublan.vscode-log-viewer",
+    "bmewburn.vscode-intelephense-client",
+    "damms005.devdb-vscode",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "ms-vscode.js-debug",
+    "mikestead.dotenv",
+    "SimonSiefke.svg-preview",
+    "syler.sass-indented",
+    "xdebug.php-debug"
+  ]
+}
